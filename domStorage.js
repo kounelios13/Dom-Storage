@@ -14,8 +14,12 @@ function DomStorage() {
 			cache[selector] = $(selector);
 		}
 	}
+	function getCache(){
+		return cache;
+	}
 	return {
 		get:getFromCache,
-		update:updateInCache
+		update:updateInCache,
+		getCache:getCache
 	};
 }
