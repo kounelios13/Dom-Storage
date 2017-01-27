@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>DomStorage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="./domStorage.js"></script>
+    <script type="text/javascript">
+    var storage = new DomStorage();
+    </script>
+</head>
+<body class="bg-info">
+    <div class="jumbotron text-center">
+        <h1>Dom Storage</h1>
+        <p>Dom Storage is a simple way to cache jQuery objects into memory.It is based on the following <a href="https://ttmm.io/tech/selector-caching-jquery/">article</a></p>
+    </div>
+    <div class="container">
+        <h2>Dom Storage has the following methods for retrieving and recaching a jQuery object:</h2>
+        <div class="list-group">
+            <div class="list-group-item">
+                <h3>get(selector)</h3>
+                <p>Returns the jQuery object that corresponds to that selector.To do this
+                Dom Storage first looks through its internal cache for a reference to that object.
+                If there is no refeerence it create a new jQuery object that corresponds to the selector,caches it and the returns it.<br>.Example:<br>
+                <code>var domStorage = new DomStorage(); <br> 
+                    domStorage.get("#foo p").css("text-align","left");
+                </code>
+                It will return an jQuery object that corresponds to <code>#foo p</code> selector.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <h3>update(selectors)</h3>
+                <p>
+                    Updates the jQuery object that correspond to a given selector.When is this needed?
+                    Consider the previous example from get() method.What happens if new <code>p</code> are added on the fly inside <code>foo</code>?If you try to do the following: <code>domStorage.get("#foo p").css("text-align","left");</code>
+                    you will notice that the new paragraphs won't be styled.This is because the object retrieved from get() reflects doesn't reflect the new changes that happened.To avoid this you can do the following before trying get():<br>
+                    <code>domStorage.update("#foo p")</code>.This will recache the selector to reflect the new changes made on the fly
+                    <strong>Warning!!!</strong>.If a given selector does not exist in the cache a type error will be thrown.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <h3>getCache()</h3>
+                <p>Returns the cache of a DomStorage object</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
