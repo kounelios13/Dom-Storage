@@ -18,11 +18,7 @@ function DomStorage() {
 		return cache;
 	}
 	function flushCache(){
-		for(var prop in cache){
-			if(cache.hasOwnProperty(prop)){
-				delete cache[prop];
-			}
-		}
+		cache = {};
 	}
 	return {
 		get:getFromCache,
