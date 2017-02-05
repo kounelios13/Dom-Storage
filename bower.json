@@ -12,7 +12,8 @@
     "cache"
   ],
   "ignore":[
-    "*.html"
+    "*.html",
+    "README.md"
   ],
   "license": "MIT",
   "dependencies": {
