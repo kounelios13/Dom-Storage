@@ -1,5 +1,5 @@
 {
-  "name": "DomStorage",
+  "name": "domStorage",
   "homepage": "https://github.com/kounelios13/Dom-Storage",
   "authors": [
     "kounelios13 <pkounelios@gmail.com>"
@@ -11,9 +11,10 @@
     "jQuery",
     "cache"
   ],
-  "ignore":[
+  "ignore": [
     "*.html",
-    "README.md"
+    "README.md",
+    "validator.js"
   ],
   "license": "MIT",
   "dependencies": {
