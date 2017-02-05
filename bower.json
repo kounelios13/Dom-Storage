@@ -11,5 +11,11 @@
     "jQuery",
     "cache"
   ],
-  "license": "MIT"
+  "ignore":[
+    "*.html"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "DomStorage": "domstorage#*"
+  }
 }

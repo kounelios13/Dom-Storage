@@ -31,8 +31,3 @@ function DomStorage() {
 		flush:flushCache
 	};
 }
-class DomCache{
-	constructor{
-		
-	}
-}
